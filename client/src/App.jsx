@@ -1,6 +1,6 @@
 
 import { Outlet } from 'react-router-dom';
-import './index.css'; // or './tailwind.css'
+import './App.css'; // or './tailwind.css'
 
 
 function App() {
