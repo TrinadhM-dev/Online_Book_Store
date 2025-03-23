@@ -1,1 +1,73 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight"
+/* styles.css or main.css */
+@tailwind utilities;
+
+
+/* Customize Tailwind CSS colors and fonts using @layer */
+@layer base {
+  /* Define custom colors as CSS variables */
+  :root {
+    --primary: #FFCE1A;
+    --secondary: #0D0842;
+    --discount: #6C6C6C;
+    --blackBG: #F3F3F3;
+    --favorite: #FF5841;
+  }
+}
+
+@layer theme {
+  /* Custom font families */
+  .font-primary {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .font-secondary {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+}
+
+  
+/* Define CSS variables */
+@layer base {
+    :root {
+      --primary: #FFCE1A;
+      --secondary: #0D0842;
+    }
+  }
+  /* Custom Tailwind utility classes */
+@layer utilities {
+    .bg-primary {
+      background-color: var(--primary);
+    }
+    .bg-secondary {
+      background-color: var(--secondary);
+    }
+
+    .btn-primary {
+        color: var(--primary);
+        padding: 0.5rem 3rem; /* px-12 py-2 */
+        border-radius: 0.375rem; /* rounded-md */
+        font-size: 1rem; /* text-base */
+        font-family: 'Nunito Sans', sans-serif; /* font-secondary */
+        font-weight: bold; /* font-bold */
+        cursor: pointer;
+        transition: all 0.2s ease-in-out; /* transition-all duration-200 */
+      }
+    
+      .btn-primary:hover {
+        color: var(--secondary);
+        color: white;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        @apply bg-white p-5 rounded-full z-50 shadow-md;
+      }
+  }
+
+
+  @layer components {
+    .bn-primary { 
+      @apply bg-yellow-600 text-white px-6 py-2 rounded-md text-base font-bold transition-all duration-200 hover:bg-black;
+    }
+  }
+  
