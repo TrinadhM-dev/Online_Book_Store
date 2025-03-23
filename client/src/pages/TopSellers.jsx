@@ -13,8 +13,8 @@ const TopSellers = () => {
     <div className='py-10'>
         <h2 className='text-3xl font-semibold mb-6'>Top Sellers</h2>
         {/* Category Filtering */}
-        <div>
-            <select name="category" id="category">
+        <div className='mb-8 flex items-center'>
+            <select name="category" id="category" className='border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none'>
                {
                 categories.map((category,index)=>(
                     <option key={index} value={category}>{category}</option>
