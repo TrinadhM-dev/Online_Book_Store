@@ -61,6 +61,7 @@ const TopSellers = () => {
                         spaceBetween:50
                     }
                  }}
+                 
                 pagination={{
                     clickable: true,
                 }}
