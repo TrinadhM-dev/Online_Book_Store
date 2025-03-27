@@ -36,16 +36,16 @@ export const cartSlice = createSlice({
       // immutable state based off those changes
       state.value += 1
     },
-    decrement: (state) => {
-      state.value -= 1
+    removeCart:(state,action) =>{
+        state.cartItems = state.cartItems.filter(item => item._id !== action.payload._id)
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
+    clearCart:(state)=>{
+        state.cartItems = []
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {addToCart } = cartSlice.actions
+export const {addToCart ,removeCart,clearCart } = cartSlice.actions
 
 export default cartSlice.reducer
