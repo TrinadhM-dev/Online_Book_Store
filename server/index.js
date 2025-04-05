@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 5000;
+require('dotenv').config()
 
 app.get('/', (req, res) => {
     res.send(`Book Store Server is Running!!`)
@@ -9,7 +10,7 @@ app.get('/', (req, res) => {
 
 
 async function main() {
-    await mongoose.connect('mongodb+srv://admin:admin@nodeexpressprojects.fv6ut.mongodb.net/');
+    await mongoose.connect(process.env.DB_URL);
 }
 main().then(() => console.log("MongoDB success!")).catch(err => console.log(err));
 
