@@ -13,11 +13,6 @@ app.use(cors({
     credentials: true
 }))
 
-
-app.get('/', (req, res) => {
-    res.send(`Book Store Server is Running!!`)
-})
-
 //routes
 app.use('/api/books',bookRoutes);
 
