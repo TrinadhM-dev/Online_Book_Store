@@ -11,6 +11,7 @@ import 'swiper/css/navigation';
 import { Pagination, HashNavigation, Navigation } from 'swiper/modules';
 const Recommend = () => {
     const [books, setBooks] = useState([]);
+    //   const {data : books = []} = useFetchAllBooksQuer;
     useEffect(() => {
         fetch("books.json")
             .then(res => res.json())
