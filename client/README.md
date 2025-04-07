@@ -17,3 +17,4 @@ Swiper js
 google font 
 tailwind 
 React toolkit for Redux management
+RTK Query for better way of handling API data..
