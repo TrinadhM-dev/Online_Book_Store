@@ -22,9 +22,9 @@ router.post('/create-book',async(req,res)=>{
 router.get('/',async(req,res)=>{
     try {
         const books = await Book.find().sort({createdAt:-1});
-        res.status(200).send({message:'Books Retrived Successfully!',books});
-    } catch (error) {
-        res.status(401).send({message:'Error in getting books'});
+        res.status(200).send(books);
+   ; } catch (error) {
+        res.status(500).send({message:'Error in getting books'});
     }
 })
 
@@ -52,7 +52,7 @@ try {
     const {id} = req.params;
     const updatedBook = await Book.findByIdAndUpdate(id, req.body , {new : true});
     if(!updatedBook) {
-        return res.status(404).send({message:"Not Found"});
+        return res.status(404).send({message:"Book is not Found"});
     }
     else {
          res.status(200).send({message:"Current Book is", updatedBook}); 

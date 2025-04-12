@@ -6,13 +6,13 @@ const bookRoutes = require('./src/books/book_Route');
 const cors = require('cors');
 require('dotenv').config()
 
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true // if you're using cookies or auth headers
+}))
 //Midddlewares
 app.use(express.json());
-app.use(cors({
-    origin:['http://localhost:5173/'],
-    credentials: true
-}))
-
 //routes
 app.use('/api/books',bookRoutes);
 

@@ -28,7 +28,6 @@ const CheckOutPage = () => {
         setValue("checkbox", e.target.checked);
     };
     const onSubmit = (data) => {
-        console.log("Form Submitted:", data);
         const newOrder = {
             //optional chaining is a mandtory while your targeting for objects..
             name: data?.name,
@@ -43,7 +42,6 @@ const CheckOutPage = () => {
             productIds: cartItems.map(item => item?._id),
             totalPrice :totalPrice
         }
-        console.log(newOrder);
         
     };
 
