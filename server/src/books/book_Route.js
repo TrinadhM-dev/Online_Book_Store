@@ -47,7 +47,7 @@ router.get('/:id',async(req,res)=>{
 
 //update an instance
 
-router.put("/:id",async(req,res)=>{
+router.put("/edit/:id",async(req,res)=>{
 try {
     const {id} = req.params;
     const updatedBook = await Book.findByIdAndUpdate(id, req.body , {new : true});
